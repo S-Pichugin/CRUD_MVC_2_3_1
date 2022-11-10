@@ -22,7 +22,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List<User> getAllUsers() {
         return entityManager.createQuery("select u from User u", User.class).getResultList();
-//        return entityManager.createNativeQuery("select * from users", User.class).getResultList();
     }
 
     @Override
@@ -41,9 +40,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void update(int id, User updateUser) {
         User user = show(id);
-        user.setEmail(updateUser.getEmail());
         user.setName(updateUser.getName());
-        user.setLast_name(updateUser.getLast_name());
+        user.setSurname(updateUser.getSurname());
+        user.setEmail(updateUser.getEmail());
         entityManager.merge(user);
     }
 

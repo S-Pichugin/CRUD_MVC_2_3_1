@@ -10,19 +10,21 @@
 <body>
 <h1>Users</h1>
 <div>
-    <table border="1">
+    <table ALIGN="center" BGCOLOR="#deb887" BORDER="5" HEIGHT="50%" WIDTH="70%">
         <tr>
-            <th>Id</th>
-            <th>Email</th>
             <th>Name</th>
-            <th>Lastname</th>
+            <th>Surname</th>
+            <th>Email</th>
         </tr>
         <tr th:each="user:${users}">
-            <td th:utext="${user.getId()}"></td>
-            <td th:utext="${user.getEmail()}"></td>
             <td th:utext="${user.getName()}"></td>
-            <td th:utext="${user.getLast_name()}"></td>
-            <td><a th:href="@{/{id}/edit(id=${user.getId()})}">Edit</a></td>
+            <td th:utext="${user.getSurname()}"></td>
+            <td th:utext="${user.getEmail()}"></td>
+
+            <td><form th:action="@{/{id}/edit(id=${user.getId()})}">
+                <button>Update</button>
+            </form></td>
+
             <td><form th:method="DELETE" th:action="@{/{id}/delete(id=${user.getId()})}">
                 <input type="submit" value="Delete">
             </form></td>
