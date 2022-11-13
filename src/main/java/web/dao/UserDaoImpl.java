@@ -1,4 +1,4 @@
-package web.DAO;
+package web.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import web.model.User;

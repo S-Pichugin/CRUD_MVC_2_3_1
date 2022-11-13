@@ -1,8 +1,8 @@
-package web.Service;
+package web.service;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import web.DAO.UserDao;
+import web.dao.UserDao;
 import web.model.User;
 import java.util.List;
 
@@ -45,7 +45,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @Transactional
     public User isExistById(User user) {
         return userDao.isExistById(user);
     }
